@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase.utils';
 
-import { ReactComponent as Logo } from'../../assets/clothes-pin.svg';
+import { ReactComponent as Logo } from'../../assets/hanger.svg';
 
 import './header.styles.scss';
 
