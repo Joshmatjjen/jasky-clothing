@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { selectCartItems } from '../../redux/cart/cart.selector'
 
 import CartItem from '../cart-item/cart-item.component';
 
@@ -21,12 +21,8 @@ const CartDropdown = ({ cartItems }) => (
   </div>
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems
+const mapStateToProps = state => ({
+  cartItems: selectCartItems(state)
 })
-
-// const mapDispatchToProps = dispath => ({
-//   tooggleCartHidden: () => dispath(toggleCartHidden())
-// })
 
 export default connect(mapStateToProps)(CartDropdown);
