@@ -12,37 +12,24 @@ import { signOutStart } from '../../redux/user/user.action';
 
 // import './header.styles.scss';
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, AppLogo } from './header.styles';
-
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to='/'>
       <AppLogo />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to='/shop'>
-        SHOP  
-      </OptionLink>
-      <OptionLink to='/contact'>
-        CONTACT 
-      </OptionLink>
-      {
-        currentUser ? (
+      <OptionLink to='/shop'>SHOP</OptionLink>
+      <OptionLink to='/shop'>CONTACT</OptionLink>
+      {currentUser ? (
         <OptionLink as='div' onClick={signOutStart}>
           SIGN OUT
         </OptionLink>
-        ):(
-        <OptionLink to='/signin'>
-          SIGN IN
-        </OptionLink>
-        )
-      }
+      ) : (
+        <OptionLink to='/signin'>SIGN IN</OptionLink>
+      )}
       <CartIcon />
     </OptionsContainer>
-    { 
-      hidden 
-        ? null 
-        : <CartDropdown />
-    }
+    {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
 
