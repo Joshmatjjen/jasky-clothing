@@ -2,8 +2,8 @@
   "name": "jasky-clothing-server",
   "version": "1.0.0",
   "engines": {
-    "node": "10.15.3",
-    "npm": "6.11.3"
+    "node": "12.13.0",
+    "npm": "6.13.0"
   },
   "scripts": {
     "client": "cd client && npm start",
